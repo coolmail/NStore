@@ -76,6 +76,7 @@
     </Reference>
     <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System.Net.Http.WebRequest">
       <Private>True</Private>
@@ -87,9 +88,11 @@
     </Reference>
     <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
@@ -183,27 +186,28 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_GlobalResources\Account\Account.resx">
-      <Generator>ResourceAccountG</Generator>
+      <Generator>GResourceAccount</Generator>
       <LastGenOutput>Account.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="App_GlobalResources\Account\Account.bg.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+    <Content Include="App_GlobalResources\Account\Account.bg.resx">
+      <Generator>GResourceAccount</Generator>
       <LastGenOutput>Account.bg.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
+    </Content>
     <Content Include="App_GlobalResources\ErrorMessages\ErrorMessages.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
+      <Generator>GResourceErrorMessages</Generator>
       <LastGenOutput>ErrorMessages.Designer.cs</LastGenOutput>
     </Content>
     <Content Include="App_GlobalResources\ErrorMessages\ErrorMessages.bg.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
+      <Generator>GResourceErrorMessages</Generator>
       <LastGenOutput>ErrorMessages.bg.designer.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Properties\PublishProfiles\eDepot.pubxml" />
     <None Include="Properties\PublishProfiles\nstore - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\nstore - Web Deploy.pubxml" />
   </ItemGroup>
