@@ -8,12 +8,12 @@ namespace Depot.Models
 {
     public class LoginModel
     {
-        [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(Resources.ErrorMessages))]
+        //[Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(Resources.ErrorMessages))]
         [Display(Name = "Потребител / E-Mail")]
         [DataType(DataType.EmailAddress)]
         public string UserName { get; set; }
 
-        [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(Resources.ErrorMessages))]
+        //[Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(Resources.ErrorMessages))]
         [DataType(DataType.Password)]
         [Display(Name = "Парола")]
         public string Password { get; set; }
