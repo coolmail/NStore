@@ -1,0 +1,70 @@
+﻿@model DiscountGroupModel
+@{
+    ViewBag.Title = "Група отстъпки";
+}
+<script>
+    $(function () {
+        $("#searchDiscount").autocomplete({
+            source: function (request, response) {
+                $.ajax({
+                    url: "/Discount/JSList",
+                    dataType: "json",
+                    data: {
+                        term: request.term
+                    },
+                    success: function (data) {
+                        response(data);
+                    }
+                });
+            },
+            minLength: 1,
+            select: function (event, ui) {
+                /*
+                log(ui.item ?
+                  "Selected: " + ui.item.label :
+                  "Nothing selected, input was " + this.value);
+                  */
+            },
+            open: function () {
+                console.log('open');
+               // $(this).removeClass("ui-corner-all").addClass("ui-corner-top");
+            },
+            close: function () {
+                console.log('close');
+               // $(this).removeClass("ui-corner-top").addClass("ui-corner-all");
+            }
+        });
+    });
+</script>
+<div class="row-fluid">
+    <div class="col-md-8">
+        <form method="post" class="form-horizontal" enctype="multipart/form-data">
+            @Html.HiddenFor(m => m.DiscountGroupId)
+            <div class="form-group">
+                @Html.LabelFor(m => m.Name, new { @class = "col-sm-4 control-label" })
+                <div class="col-sm-8">
+                    @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Name)
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Discounts, new { @class = "col-sm-4 control-label" })
+                <div class="col-sm-8">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search for..."
+                            id="searchDiscount">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">Добави</button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-4 col-sm-8">
+                    <button type="submit" class="btn btn-primary">Запис</button>
+                    <a href="~/Discount" class="btn btn-default">Отказ</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
