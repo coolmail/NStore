@@ -11,3 +11,13 @@
 .toolbar {
     padding-bottom: 10px;
 }
+.vertical-list-item {
+    width: 100%;
+}
+    .vertical-list-item .vlist-label {
+        padding: 0px 10px;
+    }
+    .vertical-list-item .vlist-btn {
+        color: red;
+        cursor: pointer;
+    }
